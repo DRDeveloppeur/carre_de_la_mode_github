@@ -53,21 +53,50 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         ";
-        // line 8
-        echo "        ";
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
-        echo "
+        // line 7
+        echo "        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"favicon/apple-touch-icon.png\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"favicon/favicon-32x32.png\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"favicon/favicon-16x16.png\">
+        <link rel=\"manifest\" href=\"favicon/site.webmanifest\">
         ";
         // line 12
+        echo "        <link rel=\"stylesheet\" href=\"fontawesome/css/all.min.css\" media=\"screen\">
+        ";
+        // line 14
+        echo "        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+        <link href=\"https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap\" rel=\"stylesheet\">
+        ";
+        // line 18
+        echo "        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css\">
+        ";
+        // line 20
+        echo "        <link rel=\"stylesheet\" href=\"css/dist/style.css\">
+        ";
+        // line 22
+        echo "        <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>
+        ";
+        // line 25
+        echo "        ";
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 28
+        echo "
+        ";
+        // line 29
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 32
         echo "    </head>
     <body>
         ";
-        // line 17
+        // line 34
+        $this->loadTemplate("header.html.twig", "base.html.twig", 34)->display($context);
+        // line 35
+        echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 36
+        echo "        ";
+        $this->loadTemplate("footer.html.twig", "base.html.twig", 36)->display($context);
+        // line 37
         echo "    </body>
 </html>
 ";
@@ -89,7 +118,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Le Carrée de la mode | ";
+        echo "Le CarrÃ©e de la mode | ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -98,7 +127,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     }
 
-    // line 8
+    // line 25
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -108,9 +137,9 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
+        // line 26
         echo "            ";
-        // line 10
+        // line 27
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -120,7 +149,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     }
 
-    // line 12
+    // line 29
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -130,9 +159,9 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 30
         echo "            ";
-        // line 14
+        // line 31
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -142,7 +171,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     }
 
-    // line 17
+    // line 35
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -165,9 +194,14 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  146 => 17,  136 => 14,  134 => 13,  124 => 12,  114 => 10,  112 => 9,  102 => 8,  83 => 5,  71 => 18,  69 => 17,  65 => 15,  63 => 12,  60 => 11,  57 => 8,  53 => 5,  47 => 1,);
+        return array (  175 => 35,  165 => 31,  163 => 30,  153 => 29,  143 => 27,  141 => 26,  131 => 25,  112 => 5,  100 => 37,  97 => 36,  94 => 35,  92 => 34,  88 => 32,  86 => 29,  83 => 28,  80 => 25,  77 => 22,  74 => 20,  71 => 18,  66 => 14,  63 => 12,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -176,7 +210,24 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Le Carrée de la mode | {% endblock %}</title>
+        <title>{% block title %}Le CarrÃ©e de la mode | {% endblock %}</title>
+        {# FAVICON #}
+        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"favicon/apple-touch-icon.png\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"favicon/favicon-32x32.png\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"favicon/favicon-16x16.png\">
+        <link rel=\"manifest\" href=\"favicon/site.webmanifest\">
+        {# FONTAWESOME (ICONES) #}
+        <link rel=\"stylesheet\" href=\"fontawesome/css/all.min.css\" media=\"screen\">
+        {# GOOGLE FONT #}
+        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+        <link href=\"https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap\" rel=\"stylesheet\">
+        {# GRIDLEX #}
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css\">
+        {# CSS #}
+        <link rel=\"stylesheet\" href=\"css/dist/style.css\">
+        {# JQUERY #}
+        <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -188,9 +239,11 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         {% endblock %}
     </head>
     <body>
+        {% include \"header.html.twig\" %}
         {% block body %}{% endblock %}
+        {% include \"footer.html.twig\" %}
     </body>
 </html>
-", "base.html.twig", "C:\\Users\\RAUL\\Documents\\Perso\\MASTER\\carre_de_la_mode\\templates\\base.html.twig");
+", "base.html.twig", "D:\\DEV\\3WA\\MASTER\\carre_de_la_mode_github\\templates\\base.html.twig");
     }
 }

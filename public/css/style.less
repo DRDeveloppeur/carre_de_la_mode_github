@@ -1,0 +1,104 @@
+@import "main_variables.less";
+@import "header.less";
+@import "button.less";
+@import "modal.less";
+@import "footer.less";
+
+// ------------------ COMMON ------------------
+
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: @font-main!important;
+    color: @txt;
+}
+p {
+    margin: 0;
+}
+a {
+    text-decoration-skip-ink: auto;
+    color: inherit;
+    text-decoration: none;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+img {display: block;}
+.above {
+    &-LG {
+        @media @below-XL {
+            display: none;
+        }
+    }
+    &-MD {
+        @media @below-LG {
+            display: none;
+        }
+    }
+    &-SM {
+        @media @below-MD {
+            display: none;
+        }
+    }
+}
+.below {
+    &-LG {
+        @media @above-XL {
+            display: none;
+        }
+    }
+    &-MD {
+        @media @above-LG {
+            display: none;
+        }
+    }
+    &-SM {
+        @media @above-MD {
+            display: none;
+        }
+    }
+}
+.hover {
+    &:not(:hover) {
+        display: none;
+    }
+}
+input, button, textarea, select {
+    font: inherit;
+}
+
+// ------------------ CONTAINER ------------------
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+  
+@media (min-width: 768px) {
+    .container {
+        max-width: 760px;
+    }
+}
+  
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+  
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
