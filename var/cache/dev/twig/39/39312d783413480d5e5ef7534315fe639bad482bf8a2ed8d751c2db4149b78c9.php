@@ -54,13 +54,26 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         echo "</title>
         ";
         // line 7
-        echo "        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"favicon/apple-touch-icon.png\">
-        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"favicon/favicon-32x32.png\">
-        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"favicon/favicon-16x16.png\">
-        <link rel=\"manifest\" href=\"favicon/site.webmanifest\">
+        echo "        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon/apple-touch-icon.png"), "html", null, true);
+        echo "\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon/favicon-32x32.png"), "html", null, true);
+        echo "\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon/favicon-16x16.png"), "html", null, true);
+        echo "\">
+        <link rel=\"manifest\" href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon/site.webmanifest"), "html", null, true);
+        echo "\">
         ";
         // line 12
-        echo "        <link rel=\"stylesheet\" href=\"fontawesome/css/all.min.css\" media=\"screen\">
+        echo "        <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("fontawesome/css/all.min.css"), "html", null, true);
+        echo "\" media=\"screen\">
         ";
         // line 14
         echo "        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
@@ -71,7 +84,9 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         echo "        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css\">
         ";
         // line 20
-        echo "        <link rel=\"stylesheet\" href=\"css/style.css\">
+        echo "        <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/style.css"), "html", null, true);
+        echo "\">
 
         ";
         // line 23
@@ -202,7 +217,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     public function getDebugInfo()
     {
-        return array (  176 => 36,  166 => 32,  164 => 31,  154 => 30,  144 => 28,  142 => 27,  132 => 26,  113 => 5,  101 => 38,  98 => 37,  95 => 36,  93 => 35,  89 => 33,  87 => 30,  84 => 29,  81 => 26,  78 => 23,  74 => 20,  71 => 18,  66 => 14,  63 => 12,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  191 => 36,  181 => 32,  179 => 31,  169 => 30,  159 => 28,  157 => 27,  147 => 26,  128 => 5,  116 => 38,  113 => 37,  110 => 36,  108 => 35,  104 => 33,  102 => 30,  99 => 29,  96 => 26,  93 => 23,  87 => 20,  84 => 18,  79 => 14,  74 => 12,  70 => 10,  66 => 9,  62 => 8,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -213,12 +228,12 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         <meta charset=\"UTF-8\">
         <title>{% block title %}Le Carrée de la mode | {% endblock %}</title>
         {# FAVICON #}
-        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"favicon/apple-touch-icon.png\">
-        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"favicon/favicon-32x32.png\">
-        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"favicon/favicon-16x16.png\">
-        <link rel=\"manifest\" href=\"favicon/site.webmanifest\">
+        <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{{ asset('favicon/apple-touch-icon.png') }}\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"{{ asset('favicon/favicon-32x32.png') }}\">
+        <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"{{ asset('favicon/favicon-16x16.png') }}\">
+        <link rel=\"manifest\" href=\"{{ asset('favicon/site.webmanifest') }}\">
         {# FONTAWESOME (ICONES) #}
-        <link rel=\"stylesheet\" href=\"fontawesome/css/all.min.css\" media=\"screen\">
+        <link rel=\"stylesheet\" href=\"{{ asset('fontawesome/css/all.min.css') }}\" media=\"screen\">
         {# GOOGLE FONT #}
         <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
         <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
@@ -226,7 +241,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         {# GRIDLEX #}
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css\">
         {# CSS #}
-        <link rel=\"stylesheet\" href=\"css/style.css\">
+        <link rel=\"stylesheet\" href=\"{{ asset('css/style.css') }}\">
 
         {# JQUERY #}
         <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>

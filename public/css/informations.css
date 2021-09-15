@@ -1,0 +1,32 @@
+main#informations {
+  padding-bottom: 60px;
+}
+main#informations .title-primary {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: red!important;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+main#informations h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+main#informations#cgv .content {
+  position: sticky;
+  top: 30px;
+  background-color: #f2f2f2;
+  padding: 15px;
+}
+main#informations#cgv .content ul.sommaire {
+  list-style-type: none;
+}
+main#informations#cgv .content ul.sommaire li {
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+main#informations#cgv .content ul.sommaire li:hover {
+  color: #ff5733;
+}

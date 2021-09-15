@@ -1,0 +1,42 @@
+@import "main_variables.less";
+
+main#informations {
+    padding-bottom: 60px;
+
+    .title-primary {
+        font-size: 26px;
+        font-weight: 700;
+        text-align: center;
+        color: red!important;
+        margin-bottom: 30px;
+        padding-top: 30px;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+    }
+
+    &#cgv {
+        .content {
+            position: sticky;
+            top: 30px;
+            background-color: #f2f2f2;
+            padding: 15px;
+
+            ul.sommaire {
+                list-style-type: none;
+
+                li {
+                    cursor: pointer;
+                    transition: all ease-in-out 0.2s;
+
+                    &:hover {
+                        color: @color-primary;
+                    }
+                }
+            }
+        }
+    }
+}
