@@ -71,32 +71,33 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         echo "        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css\">
         ";
         // line 20
-        echo "        <link rel=\"stylesheet\" href=\"css/dist/style.css\">
+        echo "        <link rel=\"stylesheet\" href=\"css/style.css\">
+
         ";
-        // line 22
+        // line 23
         echo "        <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>
         ";
-        // line 25
+        // line 26
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 28
+        // line 29
         echo "
         ";
-        // line 29
+        // line 30
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 32
+        // line 33
         echo "    </head>
     <body>
         ";
-        // line 34
-        $this->loadTemplate("header.html.twig", "base.html.twig", 34)->display($context);
         // line 35
-        echo "        ";
-        $this->displayBlock('body', $context, $blocks);
+        $this->loadTemplate("header.html.twig", "base.html.twig", 35)->display($context);
         // line 36
         echo "        ";
-        $this->loadTemplate("footer.html.twig", "base.html.twig", 36)->display($context);
+        $this->displayBlock('body', $context, $blocks);
         // line 37
+        echo "        ";
+        $this->loadTemplate("footer.html.twig", "base.html.twig", 37)->display($context);
+        // line 38
         echo "    </body>
 </html>
 ";
@@ -127,7 +128,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     }
 
-    // line 25
+    // line 26
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -137,9 +138,9 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 26
-        echo "            ";
         // line 27
+        echo "            ";
+        // line 28
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -149,7 +150,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     }
 
-    // line 29
+    // line 30
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -159,9 +160,9 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 30
-        echo "            ";
         // line 31
+        echo "            ";
+        // line 32
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -171,7 +172,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     }
 
-    // line 35
+    // line 36
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -201,7 +202,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     public function getDebugInfo()
     {
-        return array (  175 => 35,  165 => 31,  163 => 30,  153 => 29,  143 => 27,  141 => 26,  131 => 25,  112 => 5,  100 => 37,  97 => 36,  94 => 35,  92 => 34,  88 => 32,  86 => 29,  83 => 28,  80 => 25,  77 => 22,  74 => 20,  71 => 18,  66 => 14,  63 => 12,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  176 => 36,  166 => 32,  164 => 31,  154 => 30,  144 => 28,  142 => 27,  132 => 26,  113 => 5,  101 => 38,  98 => 37,  95 => 36,  93 => 35,  89 => 33,  87 => 30,  84 => 29,  81 => 26,  78 => 23,  74 => 20,  71 => 18,  66 => 14,  63 => 12,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -225,7 +226,8 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         {# GRIDLEX #}
         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.7.1/gridlex.min.css\">
         {# CSS #}
-        <link rel=\"stylesheet\" href=\"css/dist/style.css\">
+        <link rel=\"stylesheet\" href=\"css/style.css\">
+
         {# JQUERY #}
         <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>
         {# Run `composer require symfony/webpack-encore-bundle`
@@ -244,6 +246,6 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         {% include \"footer.html.twig\" %}
     </body>
 </html>
-", "base.html.twig", "D:\\DEV\\3WA\\MASTER\\carre_de_la_mode_github\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\RAUL\\Documents\\Perso\\MASTER\\carre_de_la_mode_github\\templates\\base.html.twig");
     }
 }

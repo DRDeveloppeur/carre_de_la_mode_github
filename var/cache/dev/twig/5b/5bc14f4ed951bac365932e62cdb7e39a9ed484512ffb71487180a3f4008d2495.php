@@ -70,7 +70,7 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
         // line 4
         echo "    <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper/swiper-bundle.css\" />
     <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper/swiper-bundle.min.css\" />
-    <link rel=\"stylesheet\" href=\"/css/dist/home.css\" />
+    <link rel=\"stylesheet\" href=\"/css/home.css\" />
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -234,14 +234,14 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
                 <div class=\"swiper-wrapper\">
 
                     <div class=\"swiper-slide\">
-                        <div class=\"item-block\">
+                        <a href=\"\" class=\"item-block\">
                             <div class=\"status top\">
                                 <p class=\"tag\">soldes</p>
                             </div>
 
-                            <a href=\"#\">
+                            <div>
                                 <div class=\"photo\">
-                                    <img class=\"lazy\" src=\"\" alt=\"\" loading=\"lazy\" itemprop=\"image\">
+                                    <img class=\"lazy\" src=\"/images/home/6572501_1.jpg\" alt=\"\" loading=\"lazy\" itemprop=\"image\">
                                 </div>
                                 <p class=\"label\" itemprop=\"name\">Nike</p>
                                 <p class=\"labelt\" itemprop=\"name\">Airmax</p>
@@ -249,7 +249,7 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
                                     <span class=\"pxbarre\">160 €</span>
                                     <span class=\"pxcourant\">130 €</span>
                                 </p>
-                            </a>
+                            </div>
                         </div>
                     </div>
 
@@ -431,7 +431,7 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
 {% block stylesheets %}
     <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper/swiper-bundle.css\" />
     <link rel=\"stylesheet\" href=\"https://unpkg.com/swiper/swiper-bundle.min.css\" />
-    <link rel=\"stylesheet\" href=\"/css/dist/home.css\" />
+    <link rel=\"stylesheet\" href=\"/css/home.css\" />
 {% endblock %}
 
 {% block javascripts %}
@@ -544,14 +544,14 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
                 <div class=\"swiper-wrapper\">
 
                     <div class=\"swiper-slide\">
-                        <div class=\"item-block\">
+                        <a href=\"\" class=\"item-block\">
                             <div class=\"status top\">
                                 <p class=\"tag\">soldes</p>
                             </div>
 
-                            <a href=\"#\">
+                            <div>
                                 <div class=\"photo\">
-                                    <img class=\"lazy\" src=\"\" alt=\"\" loading=\"lazy\" itemprop=\"image\">
+                                    <img class=\"lazy\" src=\"/images/home/6572501_1.jpg\" alt=\"\" loading=\"lazy\" itemprop=\"image\">
                                 </div>
                                 <p class=\"label\" itemprop=\"name\">Nike</p>
                                 <p class=\"labelt\" itemprop=\"name\">Airmax</p>
@@ -559,7 +559,7 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
                                     <span class=\"pxbarre\">160 €</span>
                                     <span class=\"pxcourant\">130 €</span>
                                 </p>
-                            </a>
+                            </div>
                         </div>
                     </div>
 
@@ -711,6 +711,6 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
     </section>
 </main>
 {% endblock %}
-", "home/index.html.twig", "D:\\DEV\\3WA\\MASTER\\carre_de_la_mode_github\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\Users\\RAUL\\Documents\\Perso\\MASTER\\carre_de_la_mode_github\\templates\\home\\index.html.twig");
     }
 }
