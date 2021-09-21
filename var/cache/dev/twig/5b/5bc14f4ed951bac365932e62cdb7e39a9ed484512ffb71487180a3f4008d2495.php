@@ -172,7 +172,7 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Accueil";
+        echo "Le Carrée de la mode | Accueil";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -392,7 +392,7 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
 
                 <div class=\"col-5_md-8_sm-12\">
                     <div class=\"field\">
-                        <input type=\"text\" id=\"chnews-2\" title=\"Inscription à la newsletter\" placeholder=\"Votre adresse e-mail\">
+                        <input type=\"text\" id=\"chnews-2\" title=\"Inscription Ã  la newsletter\" placeholder=\"Votre adresse e-mail\">
                         <button type=\"button\" onclick=\"RecNews()\" class=\"btn primary\">Je m'inscris</button>
                     </div>
                 </div>
@@ -499,7 +499,7 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
     </script>
 {% endblock %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Le Carrée de la mode | Accueil{% endblock %}
 
 {% block body %}
 <main class=\"home\">
@@ -702,7 +702,7 @@ class __TwigTemplate_1c8fb0b1aabc1b891a6cdf5d2e013232efc597bc548f4aab1d55defb00a
 
                 <div class=\"col-5_md-8_sm-12\">
                     <div class=\"field\">
-                        <input type=\"text\" id=\"chnews-2\" title=\"Inscription à la newsletter\" placeholder=\"Votre adresse e-mail\">
+                        <input type=\"text\" id=\"chnews-2\" title=\"Inscription Ã  la newsletter\" placeholder=\"Votre adresse e-mail\">
                         <button type=\"button\" onclick=\"RecNews()\" class=\"btn primary\">Je m'inscris</button>
                     </div>
                 </div>

@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello InformationsController!{% endblock %}
+{% block title %}Le Carrée de la mode | Qui sommes-nous{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/informations.css') }}" />
+{% endblock %}
 
 {% block body %}
-<main id="informations who">
+<main id="informations" class="who">
     <div class="container">
         <h1 class="title-primary">Qui sommes-nous ?</h1>
 

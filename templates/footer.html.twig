@@ -13,36 +13,41 @@
                 <p class="title">Notre entreprise</p>
                 <ul>
                     <li><a href="{{ path('informations_who') }}">Qui sommes-nous</a></li>
-                    <li><a href="http://costes.devlcv.fr/fr/informations/magasins.awp">Nos boutiques</a></li>
-                    <li><a href="http://costes.devlcv.fr/fr/informations/nos-services.awp">Nos services</a></li>
-                    <li><a href="http://costes.devlcv.fr/fr/informations/blog.awp">Notre blog</a></li>
+                    <li><a href="{{ path('informations_weMarkets') }}">Nos boutiques</a></li>
+                    <li><a href="{{ path('informations_weServices') }}">Nos services</a></li>
+                    <li><a href="{{ path('informations_ourBlog') }}">Notre blog</a></li>
                 </ul>
             </div>
         
             <div class="col-3_md-4_xs-12">
                 <p class="title">Informations</p>
                 <ul>
-                    <li><a href="http://costes.devlcv.fr/fr/informations/cgv.awp">Conditions générales de vente</a></li><li><a href="http://costes.devlcv.fr/fr/informations/mentions-legales.awp">Mentions légales</a></li><li><a href="http://costes.devlcv.fr/fr/#open_preferences_center.awp">Gestions des cookies</a></li>
+                    <li><a href="{{ path('informations_cgv') }}">Conditions générales de vente</a></li>
+                    <li><a href="{{ path('informations_mLegales') }}">Mentions légales</a></li>
+                    <li><a style="cursor: pointer;" id="open_preferences_center">Gestions des cookies</a></li>
                 </ul>
             </div>
         
             <div class="col-3_md-4_xs-12">
                 <p class="title">Mon compte</p>
                 <ul>
-                    <li><a href="http://costes.devlcv.fr/fr/achats/nouveauclient.awp">Créer un compte</a></li><li><a href="http://costes.devlcv.fr/fr/achats/moncompte.awp">Suivi de mes commandes</a></li>
+                    <li><a href="{{ path('informations_who') }}">Créer un compte</a></li>
+                    <li><a href="{{ path('informations_who') }}">Suivi de mes commandes</a></li>
                 </ul>
             </div>
         
             <div class="col-3_md-4_xs-12">
                 <p class="title">Aide</p>
                 <ul>
-                    <li><a href="http://costes.devlcv.fr/fr/informations/faq.awp">Questions fréquentes</a></li><li><a href="http://costes.devlcv.fr/fr/informations/guide-des-tailles.awp">Guide des tailles</a></li><li><a href="http://costes.devlcv.fr/fr/informations/contact.awp">Nous contacter</a></li>
+                    <li><a href="{{ path('informations_faq') }}">Questions fréquentes</a></li>
+                    <li><a href="{{ path('informations_sizeGuide') }}">Guide des tailles</a></li>
+                    <li><a href="{{ path('informations_contact') }}">Nous contacter</a></li>
                 </ul>
             </div>
 
 			<div class="col-12-center" style="text-align: center;">
 				<ul>
-					<lien><li><a style="width: 100%;cursor: pointer;" id="open_preferences_center"><i class="fas fa-cog"></i>Paramètres des cookies</a></li></lien>
+					<lien><li></lien>
                 </ul> 
 			</div>
 		</div>

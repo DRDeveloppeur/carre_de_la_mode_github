@@ -134,7 +134,6 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Le Carrée de la mode | ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -217,7 +216,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 
     public function getDebugInfo()
     {
-        return array (  191 => 36,  181 => 32,  179 => 31,  169 => 30,  159 => 28,  157 => 27,  147 => 26,  128 => 5,  116 => 38,  113 => 37,  110 => 36,  108 => 35,  104 => 33,  102 => 30,  99 => 29,  96 => 26,  93 => 23,  87 => 20,  84 => 18,  79 => 14,  74 => 12,  70 => 10,  66 => 9,  62 => 8,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  190 => 36,  180 => 32,  178 => 31,  168 => 30,  158 => 28,  156 => 27,  146 => 26,  128 => 5,  116 => 38,  113 => 37,  110 => 36,  108 => 35,  104 => 33,  102 => 30,  99 => 29,  96 => 26,  93 => 23,  87 => 20,  84 => 18,  79 => 14,  74 => 12,  70 => 10,  66 => 9,  62 => 8,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -226,7 +225,7 @@ class __TwigTemplate_629542dcec0343796fe5e409f70d555e51ef2db75e067804887eaf9c952
 <html>
     <head>
         <meta charset=\"UTF-8\">
-        <title>{% block title %}Le Carrée de la mode | {% endblock %}</title>
+        <title>{% block title %}{% endblock %}</title>
         {# FAVICON #}
         <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"{{ asset('favicon/apple-touch-icon.png') }}\">
         <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"{{ asset('favicon/favicon-32x32.png') }}\">
