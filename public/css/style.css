@@ -422,6 +422,9 @@ select {
 .swiper-container {
   overflow: hidden;
 }
+.center {
+  text-align: center!important;
+}
 .container {
   width: 100%;
   padding-right: 15px;
@@ -450,4 +453,153 @@ select {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+.field {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.field > div {
+  width: 100%;
+}
+.field div + div {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.field.mt {
+  margin-top: 15px;
+}
+.field.mb {
+  margin-bottom: 15px;
+}
+.field select {
+  width: 100%;
+  height: 46px;
+  padding-left: 5px;
+  background: #FFFFFF;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  color: #1a1a1a;
+  border-radius: 0;
+}
+.field label {
+  flex: 1 1 100%;
+  display: block;
+  font-size: calc(14px - 2px);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 12px;
+  margin-bottom: 5px;
+}
+.field input {
+  flex: 1 1 0;
+  width: 100%;
+  height: 46px;
+  padding-left: 10px;
+  background: #FFFFFF;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  color: #1a1a1a;
+  border-radius: 0;
+  transition: all ease-in-out 0.2s;
+  min-width: 1%;
+  outline: none;
+}
+.field textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  background: #FFFFFF;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  color: #1a1a1a;
+  border-radius: 0;
+  transition: all ease-in-out 0.2s;
+}
+.field.w-btn {
+  flex-wrap: nowrap;
+}
+.field.w-btn input {
+  flex: 1 1 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-right: none;
+}
+.field.w-btn button {
+  flex: 0 0 1!important;
+  width: auto;
+  height: 46px;
+  border: 1px solid #e5e5e5;
+  border-right: none;
+  transition: all ease-in-out 0.2s;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0 10px;
+  min-width: 46px;
+}
+.field input[type=checkbox],
+.field input[type=radio] {
+  flex: 0 0 20px;
+  height: auto;
+  margin: 0;
+  cursor: pointer;
+  align-self: center;
+}
+.field input[type=checkbox] + label,
+.field input[type=radio] + label {
+  flex: 1 1 0;
+  font-size: 14px;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: #1a1a1a;
+  cursor: pointer;
+  padding-left: 5px;
+}
+.field input[type=checkbox]:hover + label,
+.field input[type=radio]:hover + label {
+  text-decoration: underline;
+}
+.field.privacy-field {
+  flex-wrap: wrap;
+}
+.field.privacy-field input[type=date] {
+  flex: 1 1 0;
+  border: none;
+  background: none;
+  padding: 0;
+  height: 46px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.field #registration_form_birth {
+  display: flex;
+  justify-content: space-between;
+}
+.field #registration_form_birth select + select {
+  margin-left: 15px;
+}
+.field ul li {
+  color: red!important;
+}
+.form,
+form {
+  margin-bottom: 15px;
+}
+.form .field + .field,
+form .field + .field {
+  margin-top: 15px;
+}
+.alert {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  margin-top: 15px;
+}
+.alert.alert-danger {
+  background-color: rgba(250, 0, 0, 0.7);
+  color: white;
 }

@@ -47,54 +47,35 @@
             <div class="col-4_md-6">
                 <div class="main-menu">
                     <div class="stores">
-                        <a href="/fr/informations/magasins.awp" title="Magasin">
+                        <a href="#" title="Magasin">
                             <i class="far fa-map-marker-alt"></i>
                             <p>Magasins</p>
                         </a>
                     </div>
 
                     <div class="favoris">
-                        <a href="/fr/chaussure/maselection.awp" title="Favoris">
+                        <a href="#" title="Favoris">
                             <i class="far fa-heart"></i>
                             <p>Favoris</p>
                         </a>
                     </div>
 
-                    <div class="account" id="header_connexion">
-                        <a href="#" data-toggle="modal" data-target="modal-login" title="Connexion">
-                            <i class="far fa-user"></i>
-                            <p>Connexion</p>
-                        </a>
-
-                        {# <div class="modal" id="modal-login">
-                            <div class="modal-overlay"></div>
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <p class="modal-title">Connexion</p>
-                                    <span class="close">×</span>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="form">
-                                        <div class="field">
-                                            <label for="log_emailclient">Email</label>
-                                            <input type="text" name="log_emailclient" id="log_emailclient">
-                                        </div>
-                                        <div class="field">
-                                            <label for="log_mdpclient">Mot de passe</label>
-                                            <input type="password" name="log_mdpclient"
-                                                onkeypress="if (event.keyCode == 13) {ValideLog(); event.preventDefault();}"
-                                                id="log_mdpclient" maxlenght="12">
-                                        </div>
-                                    </div>
-                                    <a href="javascript:ResetMdp();" class="btn txt fw">Mot de passe oublié ?</a>
-                                    <button type="button" class="btn md primary fw"
-                                        onclick="ValideLog(); LCVModalClose();">Se connecter</button>
-                                    <a href="http://costes.devlcv.fr/fr/achats/nouveauclient.awp"
-                                        class="btn md g-black fw mt">Créer un compte</a>
-                                </div>
-                            </div>
-                        </div> #}
-                    </div>
+                    {% if app.user %}
+                        <div class="account" id="header_connexion">
+                            <a href="{{ path('admin') }}" title="Admin">
+                                <i class="far fa-user"></i>
+                                {{ app.user.firstname }}
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% if not app.user %}
+                        <div class="account" id="header_connexion">
+                            <a href="{{ path('app_login') }}" title="Connexion">
+                                <i class="far fa-user"></i>
+                                <p>Connexion</p>
+                            </a>
+                        </div>
+                    {% endif %}
 
                     <div class="cart" id="header_panier">
                         <a>

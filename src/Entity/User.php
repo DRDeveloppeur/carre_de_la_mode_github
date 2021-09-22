@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"email"}, message="Un compte avec cette adresse email existe déjà")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -98,14 +98,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $subscribenews;
 
     /**
-     * @ORM\Column(type="datetime_immutable")
+     * @ORM\Column(type="datetime")
      */
     private $created_at;
 
     /**
-     * @ORM\Column(type="datetime_immutable", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
+
+    public function __construct()
+    {
+        $this->updateTimestamps();
+    }
 
     public function getId(): ?int
     {
@@ -340,27 +345,50 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?\DateTime
     {
         return $this->created_at;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
+    public function setCreatedAt(\DateTime $created_at): self
     {
         $this->created_at = $created_at;
 
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTime
     {
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(?\DateTimeImmutable $updated_at): self
+    public function setUpdatedAt(?\DateTime $updated_at): self
     {
         $this->updated_at = $updated_at;
 
         return $this;
     }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function updateTimestamps(): void
+    {
+        $now = new \DateTime('now');
+        $this->setUpdatedAt($now);
+        if ($this->getId() === null) {
+            $this->setCreatedAt($now);
+        }
+    }
+
+    public function supportsClass($class)
+    {
+        return $class === User::class;
+    }
+
+    // public function __toString()
+    // {
+    //     return $this->name;
+    // }
 }

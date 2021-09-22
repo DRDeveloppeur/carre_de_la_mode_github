@@ -22,26 +22,26 @@ class AppFixtures extends Fixture
             $manager->persist($size);
         }
 
-        for ($i=0; $i < 10; $i++) { 
-            $user = new User();
-            $user->setEmail($faker->email);
-            $user->setRoles($faker->randomElements(['ROLE_USER','ROLE_ADMIN']));
-            $user->setPassword($faker->password);
-            $cvl = $user->setCivility($faker->randomElement(["Mr.", "Mme."]));
-            ($cvl === "Mr.") ? $genre = "male" : $genre = "female";
-            $user->setFirstname($faker->firstname($genre));
-            $user->setLastname($faker->lastname($genre));
-            $user->setAddress($faker->streetAddress);
-            $user->setCity($faker->city);
-            $user->setPostalcode(intval($faker->postcode));
-            $user->setCountry($faker->country);
-            $user->setCellphone($faker->mobileNumber);
-            $user->setBirth($faker->dateTimeBetween('-90 years', '-18 years', null));
-            $user->setSubscribenews($faker->randomElement([true, false]));
-            $user->setCreatedAt(new \DateTimeImmutable());
+        // for ($i=0; $i < 10; $i++) { 
+        //     $user = new User();
+        //     $user->setEmail($faker->email);
+        //     $user->setRoles($faker->randomElements(['ROLE_USER','ROLE_ADMIN']));
+        //     $user->setPassword($faker->password);
+        //     $cvl = $user->setCivility($faker->randomElement(["Mr.", "Mme."]));
+        //     ($cvl === "Mr.") ? $genre = "male" : $genre = "female";
+        //     $user->setFirstname($faker->firstname($genre));
+        //     $user->setLastname($faker->lastname($genre));
+        //     $user->setAddress($faker->streetAddress);
+        //     $user->setCity($faker->city);
+        //     $user->setPostalcode(intval($faker->postcode));
+        //     $user->setCountry($faker->country);
+        //     $user->setCellphone($faker->mobileNumber);
+        //     $user->setBirth($faker->dateTimeBetween('-90 years', '-18 years', null));
+        //     $user->setSubscribenews($faker->randomElement([true, false]));
+        //     $user->setCreatedAt(new \DateTimeImmutable());
 
-            $manager->persist($user);
-        }
+        //     $manager->persist($user);
+        // }
 
         $manager->flush();
     }
