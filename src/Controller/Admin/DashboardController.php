@@ -7,6 +7,7 @@ use App\Entity\Marque;
 use App\Entity\Picture;
 use App\Entity\Product;
 use App\Entity\Size;
+use App\Entity\SubCategory;
 use App\Entity\Tag;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Router\CrudUrlGenerator;
@@ -47,11 +48,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::section('BDD');
         yield MenuItem::linkToCrud('Marques', 'fas fa-list', Marque::class);
+        yield MenuItem::linkToCrud('Categories', 'fas fa-tag', Category::class);
+        yield MenuItem::linkToCrud('Sub Categories', 'fas fa-tags', SubCategory::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-barcode', Product::class);
         yield MenuItem::linkToCrud('Images produit', 'far fa-images', Picture::class);
-        yield MenuItem::linkToCrud('Categories', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('Taille', 'fas fa-shoe-prints', Size::class);
-        yield MenuItem::linkToCrud('Tag', 'fas fa-tag', Tag::class);
+        // yield MenuItem::linkToCrud('Tag', 'fas fa-tag', Tag::class);
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-users', User::class);
     }
 }

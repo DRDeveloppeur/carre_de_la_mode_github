@@ -156,6 +156,11 @@ class Product
      */
     private $stock;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=SubCategory::class, inversedBy="product")
+     */
+    private $subCategory;
+
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
@@ -236,23 +241,6 @@ class Product
     public function setTag(?string $tag): self
     {
         $this->tag = $tag;
-
-        return $this;
-    }
-
-    public function getProductDetails(): ?ProductDetails
-    {
-        return $this->productDetails;
-    }
-
-    public function setProductDetails(ProductDetails $productDetails): self
-    {
-        // set the owning side of the relation if necessary
-        if ($productDetails->getProduct() !== $this) {
-            $productDetails->setProduct($this);
-        }
-
-        $this->productDetails = $productDetails;
 
         return $this;
     }
@@ -555,6 +543,18 @@ class Product
     public function setStock(int $stock): self
     {
         $this->stock = $stock;
+
+        return $this;
+    }
+
+    public function getSubCategory(): ?SubCategory
+    {
+        return $this->subCategory;
+    }
+
+    public function setSubCategory(?SubCategory $subCategory): self
+    {
+        $this->subCategory = $subCategory;
 
         return $this;
     }

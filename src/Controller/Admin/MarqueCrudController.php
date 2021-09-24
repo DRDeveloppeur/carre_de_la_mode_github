@@ -33,7 +33,6 @@ class MarqueCrudController extends AbstractCrudController
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
-            ->add(EntityFilter::new('product'))
             ->add('name')
         ;
     }

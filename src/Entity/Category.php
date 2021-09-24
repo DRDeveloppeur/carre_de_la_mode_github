@@ -44,6 +44,11 @@ class Category
      */
     private $created_at;
 
+    /**
+     * @ORM\OneToOne(targetEntity=SubCategory::class, mappedBy="category", cascade={"persist", "remove"})
+     */
+    private $subCategory;
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -148,5 +153,22 @@ class Category
         if ($this->getId() === null) {
             $this->setCreatedAt($now);
         }
+    }
+
+    public function getSubCategory(): ?SubCategory
+    {
+        return $this->subCategory;
+    }
+
+    public function setSubCategory(SubCategory $subCategory): self
+    {
+        // set the owning side of the relation if necessary
+        if ($subCategory->getCategory() !== $this) {
+            $subCategory->setCategory($this);
+        }
+
+        $this->subCategory = $subCategory;
+
+        return $this;
     }
 }

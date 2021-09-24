@@ -48,10 +48,13 @@ class ProductCrudController extends AbstractCrudController
         //     TextField::new('title'),
         //     TextEditorField::new('description'),
         // ];
+        yield TextField::new('name');
+        yield TextField::new('ref');
         yield AssociationField::new('marque');
         yield AssociationField::new('category');
+        yield AssociationField::new('subcategory');
         yield AssociationField::new('sizes');
-        yield TextField::new('name');
+        yield IntegerField::new('stock');
         yield TextField::new('model');
         yield MoneyField::new('price')->setCurrency('EUR');
         yield IntegerField::new('discound', 'Réduction');
@@ -68,7 +71,6 @@ class ProductCrudController extends AbstractCrudController
         yield TextField::new('base')->hideOnIndex();
         yield TextField::new('couleur')->hideOnIndex();
         yield TextField::new('matiere')->hideOnIndex();
-        yield TextField::new('ref');
         yield TextareaField::new('description')->hideOnIndex();
         yield TextEditorField::new('description')->onlyOnIndex();
         yield DateTimeField::new('created_at')->onlyOnIndex();
