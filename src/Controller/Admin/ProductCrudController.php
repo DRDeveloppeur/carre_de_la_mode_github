@@ -29,7 +29,7 @@ class ProductCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Produit')
             ->setEntityLabelInPlural('Produits')
-            ->setSearchFields(['categoryId', 'marqueId', 'name', 'model', 'price', 'discound', 'discoundV', 'tag'])
+            ->setSearchFields(['categoryId', 'subCategoryId', 'marqueId', 'name', 'model', 'price', 'discound', 'discoundV', 'tag'])
             ->setDefaultSort(['created_at' => 'DESC']);
         ;
     }
@@ -52,7 +52,7 @@ class ProductCrudController extends AbstractCrudController
         yield TextField::new('ref');
         yield AssociationField::new('marque');
         yield AssociationField::new('category');
-        yield AssociationField::new('subcategory');
+        yield AssociationField::new('subCategory');
         yield AssociationField::new('sizes');
         yield IntegerField::new('stock');
         yield TextField::new('model');

@@ -162,4 +162,9 @@ class SubCategory
             $this->setCreatedAt($now);
         }
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

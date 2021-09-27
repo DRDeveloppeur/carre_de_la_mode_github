@@ -94,6 +94,6 @@ class Size
 
     public function __toString()
     {
-        return $this->size;  
+        return $this->size;
     }
 }
