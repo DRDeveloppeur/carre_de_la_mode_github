@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
@@ -25,6 +26,7 @@ class MarqueCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Marque')
             ->setEntityLabelInPlural('Marques')
+            ->setPaginatorPageSize(10)
             ->setSearchFields(['name', 'description'])
             ->setDefaultSort(['created_at' => 'DESC']);
         ;
@@ -39,14 +41,21 @@ class MarqueCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield TextField::new('name');
-        yield ImageField::new('logo')
+        yield TextField::new('name', 'Nom');
+        yield ImageField::new('logo', 'Logo')
             ->setBasePath('uploads/marque/')
-            ->setUploadDir('public/uploads/marque');
+            ->setUploadDir('public/uploads/marque')
+            ->hideWhenUpdating();
+        yield ImageField::new('banner', 'Bannière')
+            ->setBasePath('uploads/marque/')
+            ->setUploadDir('public/uploads/marque')
+            ->hideWhenUpdating();
             // ->setUploadedFileNamePattern('[randomhash].[extension]');
-        yield TextareaField::new('description')->hideOnIndex();
-        yield TextEditorField::new('description')->onlyOnIndex();
+        // yield TextareaField::new('description')->hideOnIndex();
+        yield FormField::addPanel('Contact information')
+            ->setIcon('phone')->addCssClass('optional')
+            ->setHelp('Phone number is preferred');
+        yield TextEditorField::new('description');
         yield DateTimeField::new('created_at')->onlyOnIndex();
-        yield DateTimeField::new('updated_at')->onlyOnIndex();
     }
 }

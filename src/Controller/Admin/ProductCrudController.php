@@ -7,10 +7,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ColorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\PercentField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -29,7 +30,8 @@ class ProductCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Produit')
             ->setEntityLabelInPlural('Produits')
-            ->setSearchFields(['categoryId', 'subCategoryId', 'marqueId', 'name', 'model', 'price', 'discound', 'discoundV', 'tag'])
+            ->setPaginatorPageSize(10)
+            ->setSearchFields(['category', 'subCategoryId', 'marqueId', 'name', 'model', 'price', 'discound', 'tagId'])
             ->setDefaultSort(['created_at' => 'DESC']);
         ;
     }
@@ -48,29 +50,29 @@ class ProductCrudController extends AbstractCrudController
         //     TextField::new('title'),
         //     TextEditorField::new('description'),
         // ];
-        yield TextField::new('name');
-        yield TextField::new('ref');
-        yield AssociationField::new('marque');
-        yield AssociationField::new('category');
-        yield AssociationField::new('subCategory');
-        yield AssociationField::new('sizes');
-        yield IntegerField::new('stock');
-        yield TextField::new('model');
-        yield MoneyField::new('price')->setCurrency('EUR');
-        yield IntegerField::new('discound', 'Réduction');
-        yield TextField::new('tag');
-        yield TextField::new('rayon')->hideOnIndex();
-        yield TextField::new('sexe')->hideOnIndex();
-        yield TextField::new('departement')->hideOnIndex();
-        yield TextField::new('famille')->hideOnIndex();
-        yield TextField::new('genre')->hideOnIndex();
-        yield TextField::new('attache')->hideOnIndex();
-        yield TextField::new('forme')->hideOnIndex();
-        yield TextField::new('hauteur')->hideOnIndex();
-        yield TextField::new('longueur')->hideOnIndex();
-        yield TextField::new('base')->hideOnIndex();
-        yield TextField::new('couleur')->hideOnIndex();
-        yield TextField::new('matiere')->hideOnIndex();
+        yield TextField::new('ref')->setColumns(2);
+        yield TextField::new('name')->setColumns(3);
+        yield TextField::new('model')->hideOnIndex()->setColumns(3);
+        yield ColorField::new('couleur')->hideOnIndex()->setColumns(1);
+        yield FormField::addPanel();
+        yield AssociationField::new('marque')->setColumns(3);
+        yield AssociationField::new('category')->setColumns(3);
+        yield AssociationField::new('subCategory')->setColumns(3);
+        yield AssociationField::new('tag')->setColumns(3);
+        yield MoneyField::new('price')->setCurrency('EUR')->setColumns(2);
+        yield PercentField::new('discound', 'Réduction')->setColumns(1);
+        yield TextField::new('rayon')->hideOnIndex()->setColumns(3);
+        yield TextField::new('sexe')->hideOnIndex()->setColumns(3);
+        yield TextField::new('departement')->hideOnIndex()->setColumns(3);
+        yield TextField::new('famille')->hideOnIndex()->setColumns(3);
+        yield TextField::new('genre')->hideOnIndex()->setColumns(3);
+        yield TextField::new('attache')->hideOnIndex()->setColumns(3);
+        yield TextField::new('forme')->hideOnIndex()->setColumns(3);
+        yield TextField::new('hauteur')->hideOnIndex()->setColumns(3);
+        yield TextField::new('longueur')->hideOnIndex()->setColumns(3);
+        yield TextField::new('base')->hideOnIndex()->setColumns(3);
+        yield TextField::new('matiere')->hideOnIndex()->setColumns(3);
+        yield FormField::addPanel();
         yield TextareaField::new('description')->hideOnIndex();
         yield TextEditorField::new('description')->onlyOnIndex();
         yield DateTimeField::new('created_at')->onlyOnIndex();

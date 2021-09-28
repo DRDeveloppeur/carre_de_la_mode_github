@@ -482,6 +482,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\StockRepository" class="App\Repository\StockRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\SubCategoryRepository" class="App\Repository\SubCategoryRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -4666,7 +4670,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.wtbNguY"/>
+      <argument type="service" id=".service_locator.CscJt5h"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -6264,6 +6268,8 @@
     <service id=".abstract.instanceof.App\Repository\ProductRepository" class="App\Repository\ProductRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SizeRepository" class="App\Repository\SizeRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SizeRepository" class="App\Repository\SizeRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StockRepository" class="App\Repository\StockRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\StockRepository" class="App\Repository\StockRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SubCategoryRepository" class="App\Repository\SubCategoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SubCategoryRepository" class="App\Repository\SubCategoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TagRepository" class="App\Repository\TagRepository" autowire="true" abstract="true"/>
@@ -7361,7 +7367,7 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.wtbNguY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.CscJt5h" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\CategoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
@@ -7370,6 +7376,7 @@
         <argument key="App\Repository\ProductDetailsRepository" type="service_closure" id="App\Repository\ProductDetailsRepository"/>
         <argument key="App\Repository\ProductRepository" type="service_closure" id="App\Repository\ProductRepository"/>
         <argument key="App\Repository\SizeRepository" type="service_closure" id="App\Repository\SizeRepository"/>
+        <argument key="App\Repository\StockRepository" type="service_closure" id="App\Repository\StockRepository"/>
         <argument key="App\Repository\SubCategoryRepository" type="service_closure" id="App\Repository\SubCategoryRepository"/>
         <argument key="App\Repository\TagRepository" type="service_closure" id="App\Repository\TagRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>

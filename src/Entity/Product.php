@@ -40,16 +40,6 @@ class Product
     private $discound;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $discound_v;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $tag;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $created_at;
@@ -63,11 +53,6 @@ class Product
      * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="product", orphanRemoval=true)
      */
     private $pictures;
-
-    /**
-     * @ORM\ManyToMany(targetEntity=Size::class, mappedBy="product")
-     */
-    private $sizes;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="product")
@@ -152,19 +137,24 @@ class Product
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $stock;
-
-    /**
      * @ORM\ManyToOne(targetEntity=SubCategory::class, inversedBy="product")
      */
     private $subCategory;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Stock::class, mappedBy="product")
+     */
+    private $stocks;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Tag::class, inversedBy="products")
+     */
+    private $tag;
+
     public function __construct()
     {
         $this->pictures = new ArrayCollection();
-        $this->sizes = new ArrayCollection();
+        $this->stocks = new ArrayCollection();
         $this->updateTimestamps();
     }
 
@@ -221,30 +211,6 @@ class Product
         return $this;
     }
 
-    public function getDiscoundV(): ?string
-    {
-        return $this->discound_v;
-    }
-
-    public function setDiscoundV(?string $discound_v): self
-    {
-        $this->discound_v = $discound_v;
-
-        return $this;
-    }
-
-    public function getTag(): ?string
-    {
-        return $this->tag;
-    }
-
-    public function setTag(?string $tag): self
-    {
-        $this->tag = $tag;
-
-        return $this;
-    }
-
     public function getCreatedAt(): ?\DateTime
     {
         return $this->created_at;
@@ -294,33 +260,6 @@ class Product
             if ($picture->getProduct() === $this) {
                 $picture->setProduct(null);
             }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Size[]
-     */
-    public function getSizes(): Collection
-    {
-        return $this->sizes;
-    }
-
-    public function addSize(Size $size): self
-    {
-        if (!$this->sizes->contains($size)) {
-            $this->sizes[] = $size;
-            $size->addProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSize(Size $size): self
-    {
-        if ($this->sizes->removeElement($size)) {
-            $size->removeProduct($this);
         }
 
         return $this;
@@ -535,18 +474,6 @@ class Product
         return $this->getCategory().' - '.$this->getName();
     }
 
-    public function getStock(): ?int
-    {
-        return $this->stock;
-    }
-
-    public function setStock(int $stock): self
-    {
-        $this->stock = $stock;
-
-        return $this;
-    }
-
     public function getSubCategory(): ?SubCategory
     {
         return $this->subCategory;
@@ -555,6 +482,48 @@ class Product
     public function setSubCategory(?SubCategory $subCategory): self
     {
         $this->subCategory = $subCategory;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Stock[]
+     */
+    public function getStocks(): Collection
+    {
+        return $this->stocks;
+    }
+
+    public function addStock(Stock $stock): self
+    {
+        if (!$this->stocks->contains($stock)) {
+            $this->stocks[] = $stock;
+            $stock->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStock(Stock $stock): self
+    {
+        if ($this->stocks->removeElement($stock)) {
+            // set the owning side to null (unless already changed)
+            if ($stock->getProduct() === $this) {
+                $stock->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getTag(): ?Tag
+    {
+        return $this->tag;
+    }
+
+    public function setTag(?Tag $tag): self
+    {
+        $this->tag = $tag;
 
         return $this;
     }

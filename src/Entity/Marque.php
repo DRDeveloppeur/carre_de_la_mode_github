@@ -50,6 +50,11 @@ class Marque
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $banner;
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -167,5 +172,17 @@ class Marque
     public function __toString()
     {
         return $this->name;
+    }
+
+    public function getBanner(): ?string
+    {
+        return $this->banner;
+    }
+
+    public function setBanner(?string $banner): self
+    {
+        $this->banner = $banner;
+
+        return $this;
     }
 }
