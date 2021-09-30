@@ -6,16 +6,19 @@ use App\Entity\Product;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Option\TextAlign;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ColorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\PercentField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Filter\EntityFilter;
+use EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType;
 
 class ProductCrudController extends AbstractCrudController
 {
@@ -45,15 +48,15 @@ class ProductCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        // return [
-        //     IdField::new('id'),
-        //     TextField::new('title'),
-        //     TextEditorField::new('description'),
-        // ];
         yield TextField::new('ref')->setColumns(2);
+        yield ImageField::new('pictures[0]', 'Image')
+            ->setBasePath('uploads/product/')
+            ->setUploadDir('public/uploads/product')
+            ->onlyOnIndex();
         yield TextField::new('name')->setColumns(3);
         yield TextField::new('model')->hideOnIndex()->setColumns(3);
-        yield ColorField::new('couleur')->hideOnIndex()->setColumns(1);
+        // yield ColorField::new('couleur')->hideOnIndex()->setColumns(1);
+        yield TextField::new('couleur')->hideOnIndex()->setColumns(1);
         yield FormField::addPanel();
         yield AssociationField::new('marque')->setColumns(3);
         yield AssociationField::new('category')->setColumns(3);
@@ -74,21 +77,7 @@ class ProductCrudController extends AbstractCrudController
         yield TextField::new('matiere')->hideOnIndex()->setColumns(3);
         yield FormField::addPanel();
         yield TextareaField::new('description')->hideOnIndex();
-        yield TextEditorField::new('description')->onlyOnIndex();
-        yield DateTimeField::new('created_at')->onlyOnIndex();
-        yield DateTimeField::new('updated_at')->onlyOnIndex();
         // yield EmailField::new('model');
-
-        // $createdAt = DateTimeField::new('created_at')->setFormTypeOptions([
-        //     'html5' => true,
-        //     'years' => range(date('Y'), date('Y') + 5),
-        //     'widget' => 'single_text',
-        // ])->setValue(new \DateTime());
-        // if (Crud::PAGE_EDIT === $pageName) {
-        //     yield $createdAt->setFormTypeOption('disabled', true);
-        // } else {
-        //     yield $createdAt;
-        // }
         
     }
 }

@@ -52,7 +52,6 @@ class Category
     public function __construct()
     {
         $this->product = new ArrayCollection();
-        $this->updateTimestamps();
     }
 
     public function __toString()
@@ -141,18 +140,6 @@ class Category
         $this->created_at = $created_at;
 
         return $this;
-    }
-
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
-    public function updateTimestamps(): void
-    {
-        $now = new \DateTime('now');
-        if ($this->getId() === null) {
-            $this->setCreatedAt($now);
-        }
     }
 
     public function getSubCategory(): ?SubCategory

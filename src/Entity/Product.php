@@ -155,7 +155,6 @@ class Product
     {
         $this->pictures = new ArrayCollection();
         $this->stocks = new ArrayCollection();
-        $this->updateTimestamps();
     }
 
     public function getId(): ?int
@@ -457,21 +456,9 @@ class Product
         return $this;
     }
 
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
-    public function updateTimestamps(): void
-    {
-        $now = new \DateTime('now');
-        if ($this->getId() === null) {
-            $this->setCreatedAt($now);
-        }
-    }
-
     public function __toString()
     {
-        return $this->getCategory().' - '.$this->getName();
+        return $this->getRef().' | '.$this->getCategory().' | '.$this->getName();
     }
 
     public function getSubCategory(): ?SubCategory

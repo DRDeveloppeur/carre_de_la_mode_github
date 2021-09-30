@@ -34,6 +34,11 @@ class Size
      */
     private $product;
 
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $pictures = [];
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -95,5 +100,17 @@ class Size
     public function __toString()
     {
         return $this->size;
+    }
+
+    public function getPictures(): ?array
+    {
+        return $this->pictures;
+    }
+
+    public function setPictures(?array $pictures): self
+    {
+        $this->pictures = $pictures;
+
+        return $this;
     }
 }

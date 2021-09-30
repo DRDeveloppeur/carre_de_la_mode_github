@@ -7,6 +7,7 @@ use App\Entity\Marque;
 use App\Entity\Picture;
 use App\Entity\Product;
 use App\Entity\Size;
+use App\Entity\Stock;
 use App\Entity\SubCategory;
 use App\Entity\Tag;
 use App\Entity\User;
@@ -44,15 +45,16 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToRoute('Back to site', 'fas fa-globe-europe', 'home');
         yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToRoute('Back to site', 'fas fa-globe-europe', 'home');
         yield MenuItem::section('BDD');
         yield MenuItem::linkToCrud('Marques', 'fas fa-list', Marque::class);
         yield MenuItem::linkToCrud('Categories', 'fas fa-tag', Category::class);
         yield MenuItem::linkToCrud('Sub Categories', 'fas fa-tags', SubCategory::class);
         yield MenuItem::linkToCrud('Produits', 'fas fa-barcode', Product::class);
         yield MenuItem::linkToCrud('Images produit', 'far fa-images', Picture::class);
-        yield MenuItem::linkToCrud('Taille', 'fas fa-shoe-prints', Size::class);
+        yield MenuItem::linkToCrud('Stock', 'fas fa-cubes', Stock::class);
+        // yield MenuItem::linkToCrud('Size', 'fas fa-cubes', Size::class);
         yield MenuItem::linkToCrud('Tag', 'fas fa-tag', Tag::class);
         yield MenuItem::linkToCrud('Utilisateur', 'fas fa-users', User::class);
     }

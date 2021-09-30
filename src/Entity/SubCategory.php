@@ -53,7 +53,6 @@ class SubCategory
     public function __construct()
     {
         $this->product = new ArrayCollection();
-        $this->updateTimestamps();
     }
 
     public function getId(): ?int
@@ -149,18 +148,6 @@ class SubCategory
         $this->created_at = $created_at;
 
         return $this;
-    }
-
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
-    public function updateTimestamps(): void
-    {
-        $now = new \DateTime('now');
-        if ($this->getId() === null) {
-            $this->setCreatedAt($now);
-        }
     }
 
     public function __toString()

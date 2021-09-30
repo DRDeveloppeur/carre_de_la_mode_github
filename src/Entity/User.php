@@ -109,7 +109,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __construct()
     {
-        $this->updateTimestamps();
     }
 
     public function getId(): ?int
@@ -367,19 +366,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->updated_at = $updated_at;
 
         return $this;
-    }
-
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
-    public function updateTimestamps(): void
-    {
-        $now = new \DateTime('now');
-        $this->setUpdatedAt($now);
-        if ($this->getId() === null) {
-            $this->setCreatedAt($now);
-        }
     }
 
     public function supportsClass($class)
