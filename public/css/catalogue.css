@@ -1,0 +1,17 @@
+main#catalogue .top-catalogue {
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+main#catalogue .top-catalogue img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+}
+main#catalogue .top-catalogue .inner {
+  position: absolute;
+  padding: 30px;
+  background-color: #FFFFFF;
+}

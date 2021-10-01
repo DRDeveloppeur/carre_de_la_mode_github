@@ -34,7 +34,7 @@ class ProductCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('Produit')
             ->setEntityLabelInPlural('Produits')
             ->setPaginatorPageSize(10)
-            ->setSearchFields(['category', 'subCategoryId', 'marqueId', 'name', 'model', 'price', 'discound', 'tagId'])
+            ->setSearchFields(['ref', 'category.name', 'subCategory.id', 'marque.id', 'name', 'model', 'price', 'discound', 'tag.id'])
             ->setDefaultSort(['created_at' => 'DESC']);
         ;
     }
@@ -43,6 +43,7 @@ class ProductCrudController extends AbstractCrudController
     {
         return $filters
             ->add(EntityFilter::new('marque'))
+            ->add(EntityFilter::new('category'))
         ;
     }
 

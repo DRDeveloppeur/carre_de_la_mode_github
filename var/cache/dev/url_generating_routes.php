@@ -15,6 +15,8 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'admin' => [[], ['_controller' => 'App\\Controller\\Admin\\DashboardController::index'], [], [['text', '/admin']], [], []],
+    'catalogue' => [[], ['_controller' => 'App\\Controller\\CatalogueController::index'], [], [['text', '/catalogue']], [], []],
+    'catalogue_category' => [['category'], ['_controller' => 'App\\Controller\\CatalogueController::productsByCategory'], [], [['variable', '/', '[^/]++', 'category', true], ['text', '/catalogue']], [], []],
     'home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'informations_who' => [[], ['_controller' => 'App\\Controller\\InformationsController::whoAreWe'], [], [['text', '/informations/qui-sommes-nous']], [], []],
     'informations_weMarkets' => [[], ['_controller' => 'App\\Controller\\InformationsController::weMarkets'], [], [['text', '/informations/nos-boutiques']], [], []],
