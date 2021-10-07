@@ -14,7 +14,7 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\Admin\\DashboardController::index'], null, null, null, false, false, null]],
-        '/catalogue' => [[['_route' => 'catalogue', '_controller' => 'App\\Controller\\CatalogueController::index'], null, null, null, false, false, null]],
+        '/test' => [[['_route' => 'test', '_controller' => 'App\\Controller\\CatalogueController::index'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/informations/qui-sommes-nous' => [[['_route' => 'informations_who', '_controller' => 'App\\Controller\\InformationsController::whoAreWe'], null, null, null, false, false, null]],
         '/informations/nos-boutiques' => [[['_route' => 'informations_weMarkets', '_controller' => 'App\\Controller\\InformationsController::weMarkets'], null, null, null, false, false, null]],
@@ -25,6 +25,7 @@ return [
         '/informations/faq' => [[['_route' => 'informations_faq', '_controller' => 'App\\Controller\\InformationsController::faq'], null, null, null, false, false, null]],
         '/informations/guide-taille' => [[['_route' => 'informations_sizeGuide', '_controller' => 'App\\Controller\\InformationsController::sizeGuide'], null, null, null, false, false, null]],
         '/informations/contact' => [[['_route' => 'informations_contact', '_controller' => 'App\\Controller\\InformationsController::contact'], null, null, null, false, false, null]],
+        '/catalogue' => [[['_route' => 'catalogue', '_controller' => 'App\\Controller\\ProductController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
@@ -46,7 +47,6 @@ return [
                     .')'
                     .'|error/(\\d+)(?:\\.([^/]++))?(*:159)'
                 .')'
-                .'|/catalogue/([^/]++)(*:187)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -56,9 +56,8 @@ return [
         101 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         114 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         124 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        159 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        187 => [
-            [['_route' => 'catalogue_category', '_controller' => 'App\\Controller\\CatalogueController::productsByCategory'], ['category'], null, null, false, true, null],
+        159 => [
+            [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

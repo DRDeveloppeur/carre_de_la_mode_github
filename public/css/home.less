@@ -81,6 +81,120 @@ main.home {
     // SELECTION
     section#selection {
         .container {overflow: hidden;}
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+    
+            .item {
+                flex: 0 0 227px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 15px 60px 15px;
+                align-self: stretch;
+                position: relative;
+                overflow: hidden;
+    
+                .top-item {
+                    position: absolute;
+                    top: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 15px;
+                }
+                img {
+                    max-width: 227px;
+                    width: 100%;
+                    margin: auto;
+                    transition: all ease-in-out 0.4s;
+                }
+                p {
+                    text-align: center;
+                    display: flex;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                    line-height: 20px;
+                    font-weight: 400;
+    
+                    &.label {
+                        font-weight: 800;
+                        color: #0d0d0d;
+                    }
+                    &.price {
+                        text-align: center;
+                        display: flex;
+                        justify-content: space-evenly;
+                        align-items: center;
+    
+                        .old {
+                            &:empty {display: none;}
+                            font-size: 14px;
+                            color: #999999;
+                            text-decoration: line-through;
+                            line-height: 25px;
+                            font-weight: 800;
+                            &:empty {display: none;}
+                        }
+                        .current {
+                            font-size: 14px;
+                            color: #0d0d0d;
+                            font-weight: 800;
+                            line-height: 25px;
+                        }
+                    }
+                }
+                .sizes {
+                    opacity: 0;
+                    transition: all ease-in-out 0.2s;
+                    bottom: 0;
+                    position: absolute;
+                    background-color: white;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 30px;
+    
+                    p {
+                        font-size: 10px;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        color: @grey50;
+                        margin-bottom: 5px;
+                    }
+                    ul {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        list-style: inside none;
+                        padding: 0;
+    
+                        li {
+                            font-size: 14px;
+                            color: @txt;
+                            line-height: 22px;
+    
+                            &:not(:last-child)::after {
+                                content: "-";
+                                margin: 0 4px;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .sizes {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
     
     // MARKS

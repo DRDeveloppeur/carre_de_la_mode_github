@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Carrée de la mode | Catalogue{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/catalogue.css') }}" />
+{% endblock %}
+
+{% block body %}
+<main id="catalogue">
+    <div class="top-catalogue">
+        {% if products %}
+            {% if products[0].marque.banner %}
+                <img src="{{ asset('uploads/marque/' ~ products[0].marque.banner) }}" alt="{{products[0].marque.name}}">
+            {% endif %}
+        {% else %}
+            <img src="{{ asset('uploads/top-catalogue-default.jpg') }}" alt="Catalogue">
+        {% endif %}
+
+        <div class="inner">
+            <h2>
+                {% if products %}
+                    {{ products[0].category.name }}
+                {% else %}
+                    Aucun article
+                {% endif %}
+            </h2>
+        </div>
+    </div>
+
+    <div class="filters">
+        {% include 'product/_filter.html.twig' with {form:form} only %}
+    </div>
+
+    <div class="content">
+        <div class="top-content">
+            <div class="fil-ariane">
+
+            </div>
+            <div class="tri">
+                <p>
+                    {{ (products|length > 0) ? products|length : 'Aucun' }} {{ (products|length > 1) ? 'articles' : 'article' }} trouvée.
+                </p>
+            </div>
+        </div>
+
+        <div class="items">
+            {% for product in products %}
+                <div class="item">
+                    <div class="top-item">
+
+                    </div>
+
+                    {#<a href="{{ path('product_ref', {category: category|lower, ref: product.ref|lower}) }}">#}
+                    <a href="">
+    
+                        <img src="{{ asset('uploads/product/' ~ product.pictures[0].name) }}" alt="{{ product.name }}">
+    
+                        <p class="label">{{ product.name }}</p>
+                        <p class="ref">{{ product.ref }}</p>
+                        <p class="marque">{{ product.couleur }}</p>
+                        <p class="price">
+                            <span class="old"></span>
+                            <span class="current">{{ product.price|format_currency('EUR') }}</span>
+                        </p>
+    
+                        <div class="sizes">
+                            <p>Disponible en :</p>
+                            <ul>
+                                {% for stock in product.stocks %}
+                                    <li>{{ stock.size }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="navigation">
+            {{ knp_pagination_render(products) }}
+        </div>
+    </div>
+
+</main>
+{% endblock %}

@@ -42,6 +42,7 @@ class ComposerStaticInitd97b667ccc1a619b755ffb8afd5e301a
         'T' => 
         array (
             'Twig\\Extra\\TwigExtraBundle\\' => 27,
+            'Twig\\Extra\\Intl\\' => 16,
             'Twig\\' => 5,
         ),
         'S' => 
@@ -140,6 +141,11 @@ class ComposerStaticInitd97b667ccc1a619b755ffb8afd5e301a
         array (
             'Laminas\\Code\\' => 13,
         ),
+        'K' => 
+        array (
+            'Knp\\Component\\' => 14,
+            'Knp\\Bundle\\PaginatorBundle\\' => 27,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -195,6 +201,10 @@ class ComposerStaticInitd97b667ccc1a619b755ffb8afd5e301a
         'Twig\\Extra\\TwigExtraBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/extra-bundle',
+        ),
+        'Twig\\Extra\\Intl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/intl-extra',
         ),
         'Twig\\' => 
         array (
@@ -536,6 +546,14 @@ class ComposerStaticInitd97b667ccc1a619b755ffb8afd5e301a
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
         ),
+        'Knp\\Component\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component',
+        ),
+        'Knp\\Bundle\\PaginatorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
@@ -643,11 +661,14 @@ class ComposerStaticInitd97b667ccc1a619b755ffb8afd5e301a
         'App\\Controller\\Admin\\SubCategoryCrudController' => __DIR__ . '/../..' . '/src/Controller/Admin/SubCategoryCrudController.php',
         'App\\Controller\\Admin\\TagCrudController' => __DIR__ . '/../..' . '/src/Controller/Admin/TagCrudController.php',
         'App\\Controller\\Admin\\UserCrudController' => __DIR__ . '/../..' . '/src/Controller/Admin/UserCrudController.php',
+        'App\\Controller\\CatalogueController' => __DIR__ . '/../..' . '/src/Controller/CatalogueController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
         'App\\Controller\\InformationsController' => __DIR__ . '/../..' . '/src/Controller/InformationsController.php',
+        'App\\Controller\\ProductController' => __DIR__ . '/../..' . '/src/Controller/ProductController.php',
         'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
         'App\\DataFixtures\\AppFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/AppFixtures.php',
+        'App\\Data\\SearchData' => __DIR__ . '/../..' . '/src/Data/SearchData.php',
         'App\\Entity\\Category' => __DIR__ . '/../..' . '/src/Entity/Category.php',
         'App\\Entity\\Marque' => __DIR__ . '/../..' . '/src/Entity/Marque.php',
         'App\\Entity\\Picture' => __DIR__ . '/../..' . '/src/Entity/Picture.php',
@@ -659,11 +680,11 @@ class ComposerStaticInitd97b667ccc1a619b755ffb8afd5e301a
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\EventSubscriber\\EasyAdminSubscriber' => __DIR__ . '/../..' . '/src/EventSubscriber/EasyAdminSubscriber.php',
         'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
+        'App\\Form\\SearchForm' => __DIR__ . '/../..' . '/src/Form/SearchForm.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\CategoryRepository' => __DIR__ . '/../..' . '/src/Repository/CategoryRepository.php',
         'App\\Repository\\MarqueRepository' => __DIR__ . '/../..' . '/src/Repository/MarqueRepository.php',
         'App\\Repository\\PictureRepository' => __DIR__ . '/../..' . '/src/Repository/PictureRepository.php',
-        'App\\Repository\\ProductDetailsRepository' => __DIR__ . '/../..' . '/src/Repository/ProductDetailsRepository.php',
         'App\\Repository\\ProductRepository' => __DIR__ . '/../..' . '/src/Repository/ProductRepository.php',
         'App\\Repository\\SizeRepository' => __DIR__ . '/../..' . '/src/Repository/SizeRepository.php',
         'App\\Repository\\StockRepository' => __DIR__ . '/../..' . '/src/Repository/StockRepository.php',
@@ -2580,6 +2601,58 @@ class ComposerStaticInitd97b667ccc1a619b755ffb8afd5e301a
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/ValidGenerator.php',
         'IntlDateFormatter' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/Resources/stubs/IntlDateFormatter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Knp\\Bundle\\PaginatorBundle\\Definition\\AbstractPaginatorAware' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Definition/AbstractPaginatorAware.php',
+        'Knp\\Bundle\\PaginatorBundle\\Definition\\PaginatorAware' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Definition/PaginatorAware.php',
+        'Knp\\Bundle\\PaginatorBundle\\Definition\\PaginatorAwareInterface' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Definition/PaginatorAwareInterface.php',
+        'Knp\\Bundle\\PaginatorBundle\\DependencyInjection\\Compiler\\PaginatorAwarePass' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/DependencyInjection/Compiler/PaginatorAwarePass.php',
+        'Knp\\Bundle\\PaginatorBundle\\DependencyInjection\\Compiler\\PaginatorConfigurationPass' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/DependencyInjection/Compiler/PaginatorConfigurationPass.php',
+        'Knp\\Bundle\\PaginatorBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/DependencyInjection/Configuration.php',
+        'Knp\\Bundle\\PaginatorBundle\\DependencyInjection\\KnpPaginatorExtension' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/DependencyInjection/KnpPaginatorExtension.php',
+        'Knp\\Bundle\\PaginatorBundle\\Helper\\Processor' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Helper/Processor.php',
+        'Knp\\Bundle\\PaginatorBundle\\KnpPaginatorBundle' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/KnpPaginatorBundle.php',
+        'Knp\\Bundle\\PaginatorBundle\\Pagination\\SlidingPagination' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Pagination/SlidingPagination.php',
+        'Knp\\Bundle\\PaginatorBundle\\Pagination\\SlidingPaginationInterface' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Pagination/SlidingPaginationInterface.php',
+        'Knp\\Bundle\\PaginatorBundle\\Subscriber\\SlidingPaginationSubscriber' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Subscriber/SlidingPaginationSubscriber.php',
+        'Knp\\Bundle\\PaginatorBundle\\Templating\\PaginationHelper' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Templating/PaginationHelper.php',
+        'Knp\\Bundle\\PaginatorBundle\\Twig\\Extension\\PaginationExtension' => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle/src/Twig/Extension/PaginationExtension.php',
+        'Knp\\Component\\Pager\\Event\\AfterEvent' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/AfterEvent.php',
+        'Knp\\Component\\Pager\\Event\\BeforeEvent' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/BeforeEvent.php',
+        'Knp\\Component\\Pager\\Event\\ItemsEvent' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/ItemsEvent.php',
+        'Knp\\Component\\Pager\\Event\\PaginationEvent' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/PaginationEvent.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Filtration\\Doctrine\\ORM\\QuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/Doctrine/ORM/QuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Filtration\\Doctrine\\ORM\\Query\\WhereWalker' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/Doctrine/ORM/Query/WhereWalker.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Filtration\\FiltrationSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/FiltrationSubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Filtration\\PropelQuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/PropelQuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\ArraySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/ArraySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Callback\\CallbackPagination' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Callback/CallbackPagination.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Callback\\CallbackSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Callback/CallbackSubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\CollectionSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/CollectionSubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\DBALQueryBuilderSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/DBALQueryBuilderSubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\ODM\\MongoDB\\QueryBuilderSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/MongoDB/QueryBuilderSubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\ODM\\MongoDB\\QuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/MongoDB/QuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\ODM\\PHPCR\\QueryBuilderSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/PHPCR/QueryBuilderSubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\ODM\\PHPCR\\QuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/PHPCR/QuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\ORM\\QueryBuilderSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QueryBuilderSubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\ORM\\QuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\Doctrine\\ORM\\Query\\Helper' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/Query/Helper.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\ElasticaQuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/ElasticaQuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\PaginationSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/PaginationSubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\PropelQuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/PropelQuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Paginate\\SolariumQuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/SolariumQuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Sortable\\ArraySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/ArraySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Sortable\\Doctrine\\ODM\\MongoDB\\QuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ODM/MongoDB/QuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Sortable\\Doctrine\\ORM\\QuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ORM/QuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Sortable\\Doctrine\\ORM\\Query\\OrderByWalker' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ORM/Query/OrderByWalker.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Sortable\\ElasticaQuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/ElasticaQuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Sortable\\PropelQuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/PropelQuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Sortable\\SolariumQuerySubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/SolariumQuerySubscriber.php',
+        'Knp\\Component\\Pager\\Event\\Subscriber\\Sortable\\SortableSubscriber' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/SortableSubscriber.php',
+        'Knp\\Component\\Pager\\Exception\\PageNumberOutOfRangeException' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Exception/PageNumberOutOfRangeException.php',
+        'Knp\\Component\\Pager\\Pagination\\AbstractPagination' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Pagination/AbstractPagination.php',
+        'Knp\\Component\\Pager\\Pagination\\PaginationInterface' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Pagination/PaginationInterface.php',
+        'Knp\\Component\\Pager\\Pagination\\SlidingPagination' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Pagination/SlidingPagination.php',
+        'Knp\\Component\\Pager\\Paginator' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/Paginator.php',
+        'Knp\\Component\\Pager\\PaginatorInterface' => __DIR__ . '/..' . '/knplabs/knp-components/src/Knp/Component/Pager/PaginatorInterface.php',
         'Laminas\\Code\\DeclareStatement' => __DIR__ . '/..' . '/laminas/laminas-code/src/DeclareStatement.php',
         'Laminas\\Code\\Exception\\BadMethodCallException' => __DIR__ . '/..' . '/laminas/laminas-code/src/Exception/BadMethodCallException.php',
         'Laminas\\Code\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/laminas/laminas-code/src/Exception/ExceptionInterface.php',
@@ -6795,6 +6868,7 @@ class ComposerStaticInitd97b667ccc1a619b755ffb8afd5e301a
         'Twig\\Extension\\SandboxExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/SandboxExtension.php',
         'Twig\\Extension\\StagingExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/StagingExtension.php',
         'Twig\\Extension\\StringLoaderExtension' => __DIR__ . '/..' . '/twig/twig/src/Extension/StringLoaderExtension.php',
+        'Twig\\Extra\\Intl\\IntlExtension' => __DIR__ . '/..' . '/twig/intl-extra/IntlExtension.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\Compiler\\MissingExtensionSuggestorPass' => __DIR__ . '/..' . '/twig/extra-bundle/DependencyInjection/Compiler/MissingExtensionSuggestorPass.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/twig/extra-bundle/DependencyInjection/Configuration.php',
         'Twig\\Extra\\TwigExtraBundle\\DependencyInjection\\TwigExtraExtension' => __DIR__ . '/..' . '/twig/extra-bundle/DependencyInjection/TwigExtraExtension.php',

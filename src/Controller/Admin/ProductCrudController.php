@@ -63,10 +63,11 @@ class ProductCrudController extends AbstractCrudController
         yield AssociationField::new('category')->setColumns(3);
         yield AssociationField::new('subCategory')->setColumns(3);
         yield AssociationField::new('tag')->setColumns(3);
-        yield MoneyField::new('price')->setCurrency('EUR')->setColumns(2);
+        yield TextField::new('price')->setColumns(2);
+        // yield MoneyField::new('price')->setCurrency('EUR')->setColumns(2);
         yield PercentField::new('discound', 'Réduction')->setColumns(1);
         yield TextField::new('rayon')->hideOnIndex()->setColumns(3);
-        yield TextField::new('sexe')->hideOnIndex()->setColumns(3);
+        yield TextField::new('sexe')->setColumns(3);
         yield TextField::new('departement')->hideOnIndex()->setColumns(3);
         yield TextField::new('famille')->hideOnIndex()->setColumns(3);
         yield TextField::new('genre')->hideOnIndex()->setColumns(3);
